@@ -6,7 +6,7 @@ How to run this app
 
 2) create a directory named **"province"** within your **"htdocs"** folder.;
 
-3) Clone this repository inside the "province" folder. Run the command: "git clone https://github.com/atifciklum/province.git"."
+3) Clone this repository inside the **"province"** folder. Run the command: **"git clone https://github.com/atifciklum/province.git"**."
 
 3) Run **"php index.php migrate"** in your terminal or or alternatively, you can access **'localhost/province/migrate'** in your browser. This command will generate the required tables inside the **'db_province'** database.";
 
