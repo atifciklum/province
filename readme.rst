@@ -8,4 +8,4 @@ How to run this app
 
 3) Run **"php index.php migrate"** in your terminal or or alternatively, you can access **'localhost/province/migrate'** in your browser. This command will generate the required tables inside the **'db_province'** database.";
 
-4) Now you can access the application ** "localhost/province/"**.;
+4) Now you can access the application **"localhost/province/"**.;
