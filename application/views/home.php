@@ -1,5 +1,6 @@
 <?php 
-	$this->load->view('header');?>
+	$this->load->view('header');
+	?>
 	<table class="table table-striped table-hover">
 				<thead>
 					<tr>

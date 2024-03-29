@@ -15,42 +15,11 @@ class Home extends CI_Controller {
         
         public function index()
         {
-                $data = $this->get_view_data();
-                $this->load->view('home' , $data);   
-        }
-
-        private function do_upload_avatar()
-        {
-
-
-                $config['upload_path'] = FCPATH. 'images'; //base_url().'images/';
-                $config['allowed_types'] = 'gif|jpg|png';
-                $config['max_size'] = 2000;
-                $config['max_width'] = 3000;
-                $config['max_height'] = 3000;
          
-                        $this->load->library('upload', $config);
-                        $this->upload->initialize($config);
-
-        
-                        if (!$this->upload->do_upload('profile_image'))
-                        {
-        
-                                $error = array('error' => $this->upload->display_errors());
-                                $this->load->view('home', $error);
-                                print_r($error);
-                                exit("rrr");
-                        } else
-                        {
-                                $data = array('image_metadata' => $this->upload->data());
-                        
-                              return  $user_avatar_url = $data['image_metadata']['file_name']; 
-                        
-                        }
-
-     
+                $data = $this->get_view_data();
+               
+                $this->load->view('home' , $data);  
         }
-
        
         public function add_citizen_info()
         {
@@ -84,7 +53,8 @@ class Home extends CI_Controller {
                                 if ($_FILES['profile_image']['name']) 
                                 {
                                         
-                                        $user_avatar_url = $this->do_upload_avatar();
+                                        
+                                        $user_avatar_url = do_upload_avatar();
                                         // $citizenData = $this->Home_model->getcitizenById($citizen_id);
                                         // $citizenDataArray = get_object_vars($citizenData);
 
@@ -118,6 +88,9 @@ class Home extends CI_Controller {
                                 }               
                                 $this->Home_model->add_citizen($citizen_data);
                                 $data = $this->get_view_data();
+
+                               
+                               
                                 $this->load->view('home' , $data); 
                         }
                 }
@@ -209,7 +182,7 @@ class Home extends CI_Controller {
                                 if ($_FILES['profile_image']['name']) 
                                 {
                                         
-                                        $user_avatar_url = $this->do_upload_avatar();
+                                        $user_avatar_url = do_upload_avatar();
                                         $citizenData = $this->Home_model->getcitizenById($citizen_id);
                                         $citizenDataArray = get_object_vars($citizenData);
 
@@ -243,6 +216,7 @@ class Home extends CI_Controller {
                                 }
                                 $this->Home_model->update_citizen( $citizen_id ,$citizen_data);
                                 $data = $this->get_view_data();
+                                
                                 $this->load->view('home' , $data); 
                         }
                        
