@@ -3,26 +3,19 @@ class Home_model extends CI_Model {
 
     public function add_citizen($citizen_data)
     {
-        $this->db->insert('province_data', $citizen_data);
-        if ($this->db->affected_rows() > 0) {
-            return true; 
-        } else {
-            return false; 
-        }
+        $this->dba->insert('province_data',$citizen_data);
+     
     }
     public function update_citizen($citizen_id , $data)
     {
 
-        $this->db->where('ID', $citizen_id);
-        $this->db->update('province_data', $data);
-        return $this->db->affected_rows(); 
+        $this->dba->update('province_data', $data, $citizen_id);
 
     }
 
-    public function delete_citizen($citizen_id) {
-        $this->db->where('id', $citizen_id);
-        $this->db->delete('province_data');
-        return $this->db->affected_rows();
+    public function delete_citizen($citizen_id) 
+    {
+        $this->dba->delete('province_data',$citizen_id);
     }
 
     public function get_allcitizens()
