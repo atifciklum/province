@@ -17,7 +17,7 @@ class Home extends CI_Controller {
         {
          
                 $data = $this->get_view_data();
-               
+                debug($data);
                 $this->load->view('home' , $data);  
         }
        
