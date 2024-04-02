@@ -252,7 +252,7 @@ table.table .avatar {
 			<div class="table-title">
 				<div class="row">
 					<div class="col-sm-6">
-						<h2>Manage <b>Citizens</b></h2>
+						<h2>Manage <b>Citizens</b></h2><span><?php echo $current_date; ?></span>
 					</div>
 					<div class="col-sm-6">
 						<a href="<?php echo site_url('home/load_add_view/'); ?>" class="btn btn-success"><i class="material-icons">&#xE147;</i> <span>Add New Citizen</span></a>						
